@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for game in board_games %}
+    <div id = "board_games">
+        <ul>
+            <li>Name: {{game.name}}</li>
+            <li>Description: {{game.description}}</li>
+            <li>Quantity: {{game.quantity}}</li>
+            <li>Cost: {{game.buying_cost}}</li>
+            <li>Selling Price: {{game.selling_price}}</li>
+            <li>Manufacturer: {{game.manufacturer.name}}</li>
+        </ul>
+    </div>
+{% endfor %}
+
+{% endblock %}

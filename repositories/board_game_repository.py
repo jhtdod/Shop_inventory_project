@@ -11,7 +11,7 @@ def save(board_game):
 
 def select_all():
     board_games = []
-    sql = "SELECT * FROM tasks"
+    sql = "SELECT * FROM board_games"
     results = run_sql(sql)
     for row in results:
         manufacturer = manufacturer_repository.select(row['manufacturer_id'])
