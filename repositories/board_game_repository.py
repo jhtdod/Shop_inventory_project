@@ -7,7 +7,7 @@ def save(board_game):
     values = [board_game.name, board_game.description, board_game.quantity, board_game.buying_cost, board_game.selling_price, board_game.manufacturer.id]
     results = run_sql(sql, values)
     id = results[0]['id']
-    zombie.id = id
+    board_game.id = id
 
 def select_all():
     board_games = []
