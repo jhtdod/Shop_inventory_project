@@ -19,3 +19,15 @@ def show_inventory():
 def show_details(id):
     board_game = board_game_repository.select(id)
     return render_template('board_games/show.html', board_game=board_game)
+
+@board_game_blueprint.route('/inventory/add', methods=['POST'])
+def add_game():
+    name = request.form["name"]
+    description = request.form['description']
+    quantity = request.form['quantity']
+    buying_cost = request.form['buying_cost']
+    selling_price = request.form['selling_price']
+    manufacturer = manufacturer_repository.select(request.form['manufacturer'])
+    new_game = BoardGame(name, description, quantity, buying_cost, selling_price, manufacturer)
+    board_game_repository.save(new_game)
+    return redirect('/inventory')

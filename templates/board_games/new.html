@@ -1,1 +1,19 @@
 {% extends 'base.html' %}
+<form action="/inventory/add" method="post">
+    <label for="name">Name</label>
+    <input type="text" id = "name" name = "name">
+    <label for="description">Description</label>
+    <input type="text" id = "description" name = "description">
+    <label for="quantity">Quantity</label>
+    <input type="number" id = "quantity" name = "quantity">
+    <label for="buying_cost">Buying Cost</label>
+    <input type="number" id = "buying_cost" name = "buying_cost">
+    <label for="selling_price">Selling Price</label>
+    <input type="text" name="selling_price" id="selling_price">
+    <label for="manufacturer">Manufacturer</label>
+    <select name="manufacturer" id="manufacturer"></select>
+    {% for manufacturer in manufacturers %}
+        <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
+    </select>
+    {% endfor %}
+</form>

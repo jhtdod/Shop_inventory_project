@@ -23,16 +23,16 @@ manufacturer_repository.save(czech_games)
 
 # BOARD GAMES:
 
-scrabble = BoardGame("Scrabble", "A game", 1, 2, 2, mattel)
+scrabble = BoardGame("Scrabble", "A game", 5, 2, 2, mattel)
 board_game_repository.save(scrabble)
 
-monopoly = BoardGame("Monopoly", "A game", 1, 2, 2, hasbro)
+monopoly = BoardGame("Monopoly", "A game", 4, 2, 2, hasbro)
 board_game_repository.save(monopoly)
 
-cluedo = BoardGame("Cluedo", "A game", 1, 2, 2, hasbro)
+cluedo = BoardGame("Cluedo", "A game", 0, 2, 2, hasbro)
 board_game_repository.save(cluedo)
 
-ticket_to_ride = BoardGame("Ticket to Ride", "A game", 1, 2, 2, days_of_wonder)
+ticket_to_ride = BoardGame("Ticket to Ride", "A game", 10, 2, 2, days_of_wonder)
 board_game_repository.save(ticket_to_ride)
 
 codenames = BoardGame("Codenames", "A game", 1, 2, 2, czech_games)

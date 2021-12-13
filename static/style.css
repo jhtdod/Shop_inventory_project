@@ -1,7 +1,7 @@
-.out-of-stock > p {
+.out-of-stock {
     color: red;
 }
 
 .low-stock {
-    color: orange;
+    color: #ff8800;
 }
