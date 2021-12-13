@@ -10,6 +10,14 @@
             <li>Cost: {{game.buying_cost}}</li>
             <li>Selling Price: {{game.selling_price}}</li>
             <li>Manufacturer: {{game.manufacturer.name}}</li>
+            <div class = "out-of-stock">
+                {% if game.quantity <=3 %}
+                    <p>Low Stock</p>
+                {% endif %}
+                {% if game.quantity == 0 %}
+                    <p>Out of Stock</p>
+                {% endif %}
+            </div>
         </ul>
     </div>
 {% endfor %}
