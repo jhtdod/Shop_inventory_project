@@ -2,9 +2,9 @@
 {% block content %}
 
 {% for game in board_games %}
-    <div id = "board_games">
+    <div class = "board_games">
         <ul>
-            <li>Name: {{game.name}}</li>
+            <li><a href="/inventory/{{game.id}}">Name: {{game.name}} </a></li>
             <li>Description: {{game.description}}</li>
             <li>Quantity: {{game.quantity}}</li>
             <li>Cost: {{game.buying_cost}}</li>

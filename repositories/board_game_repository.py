@@ -27,7 +27,7 @@ def select(id):
     
     if result is not None:
         manufacturer = manufacturer_repository.select(result['manufacturer_id'])
-        board_game = BoardGame(row['name'], row['description'], row['quantity'], row['buying_cost'], row['selling_price'], manufacturer, row['id'])
+        board_game = BoardGame(result['name'], result['description'], result['quantity'], result['buying_cost'], result['selling_price'], manufacturer, result['id'])
     return board_game
 
 def delete_all():

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class = "board_games">
+    <ul>
+        <li>Name: {{board_game.name}}</li>
+        <li>Description: {{board_game.description}}</li>
+        <li>Quantity: {{board_game.quantity}}</li>
+        <li>Cost: {{board_game.buying_cost}}</li>
+        <li>Selling Price: {{board_game.selling_price}}</li>
+        <li>Manufacturer: {{board_game.manufacturer.name}}</li>
+    </ul>
+</div>
+    
+{% endblock  %}
