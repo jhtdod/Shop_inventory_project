@@ -53,5 +53,5 @@ def edit_game(id):
     selling_price = request.form['selling_price']
     manufacturer = manufacturer_repository.select(request.form['manufacturer'])
     updated_game = BoardGame(name, description, quantity, buying_cost, selling_price, manufacturer, id)
-    board_game_repository.save(updated_game)
+    board_game_repository.update(updated_game)
     return redirect('/inventory')

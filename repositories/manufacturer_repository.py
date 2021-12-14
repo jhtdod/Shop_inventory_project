@@ -11,7 +11,7 @@ def save(manufacturer):
 
 def select_all():
     manufacturers = []
-    sql = "SELECT * FROM manufacturers"
+    sql = "SELECT * FROM manufacturers ORDER BY id"
     results = run_sql(sql)
 
     for row in results:
