@@ -30,11 +30,11 @@ def add_manufacturer():
     manufacturer_repository.save(new_manufacturer)
     return redirect('/manufacturer')
 
-@board_game_blueprint.route('/inventory/edit/<int:id>')
+@manufacturer_blueprint.route('/manufacturer/edit/<int:id>')
 def show_edit(id):
-    board_game = board_game_repository.select(id)
-    manufacturers = manufacturer_repository.select_all()
-    return render_template('/board_games/edit.html', board_game=board_game, manufacturers=manufacturers)
+    manufacturer = manufacturer_repository.select(id)
+    board_games = board_game_repository.select_all()
+    return render_template('/manufacturer/edit.html', board_games=board_games, manufacturer=manufacturer)
 
 @board_game_blueprint.route('/inventory/edit/<int:id>', methods=['POST'])
 def edit_game(id):
