@@ -4,16 +4,18 @@
             <ul>
                 <div class="same-line">
                     <li><a href="/inventory/{{game.id}}">{{game.name}}</a>
-                    <div class = "low-stock">
-                        {% if (game.quantity <=3) and (game.quantity >0) %}
-                            <p>Low Stock</p>
-                        {% endif %}
-                    </div>
-                    <div class = "out-of-stock">
-                        {% if game.quantity == 0 %}
-                            <p>Out of Stock</p>
-                        {% endif %}
-                    </div>
+                        
+                             
+                            <div class = "low-stock">
+                                {% if (game.quantity <=3) and (game.quantity >0)%}
+                                    Low Stock
+                                {% endif %}
+                            </div>
+                            <div class = "out-of-stock">
+                                {% if game.quantity == 0 %}
+                                    Out of Stock
+                                {% endif %}
+
                     </li>
                 </div>
                 <li>Description: {{game.description}}</li>

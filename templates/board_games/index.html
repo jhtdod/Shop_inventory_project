@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 {% for game in board_games %}
     <div class = "board_games">
         <ul>
@@ -7,12 +8,12 @@
                 <li><a href="/inventory/{{game.id}}">{{game.name}}</a>
                 <div class = "low-stock">
                     {% if (game.quantity <=3) and (game.quantity >0) %}
-                        <p>Low Stock</p>
+                        Low Stock
                     {% endif %}
                 </div>
                 <div class = "out-of-stock">
                     {% if game.quantity == 0 %}
-                        <p>Out of Stock</p>
+                        Out of Stock
                     {% endif %}
                 </div>
                 </li>
