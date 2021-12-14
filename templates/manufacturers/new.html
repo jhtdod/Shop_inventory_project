@@ -3,13 +3,15 @@
     
 <h1>Add New Manufacturer</h1>
 
-<form action="/manufacturer/add" method="post">
+<form action="/manufacturers/add" method="post">
     <label for="name">Name: </label>
     <input type="text" id = "name" name = "name"> <br>
 
     <label for="contact_details">Contact details: </label>
-    <input type="text" id = "description" name = "description"><br>
-
+    <input type="text" id = "contact_details" name = "contact_details"><br>
+    <div>
+        <input type="submit"> <br>
+    </div>
 </form>
 
 {% endblock  %}

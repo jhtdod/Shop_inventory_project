@@ -3,11 +3,11 @@
 
 <div class = "manufacturer">
     <ul>
-        <li>{{manufacturer.name}}: </li>   
-        <li>Contact details: {{manufacturer.description}}</li>
+        <li>{{manufacturer.name}}</li>   
+        <li>Contact details: {{manufacturer.contact_details}}</li>
     </ul>
-    <a href="/manufacturer/edit/{{manufacturer.id}}">Edit</a> <br>
-    <a href="/manufacturer/delete/{{manufacturer.id}}">Delete</a>
+    <a href="/manufacturers/edit/{{manufacturer.id}}">Edit</a> <br>
+    <a href="/manufacturers/delete/{{manufacturer.id}}">Delete</a>
 </div>
     
 {% endblock  %}

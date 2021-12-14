@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class = "manufacturers">
-    <form action="/manufacturer/edit/{{manufacturer.id}}" method="post">
+    <form action="/manufacturers/edit/{{manufacturer.id}}" method="post">
         <li>
             <label for="name">Name: </label>
             <input type="text" id="name" name="name" value="{{manufacturer.name}}">

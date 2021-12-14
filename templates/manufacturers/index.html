@@ -4,7 +4,7 @@
 {% for manufacturer in manufacturers %}
     <div class = "manufacturer">
         <ul>
-            <li><a href="/manufacturers/{{manufacturer.id}}">Name: {{manufacturer.name}} </a></li>
+            <li>Name: <a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}} </a></li>
             <li>Contact details: {{manufacturer.contact_details}}</li>
         </ul>
     </div>
