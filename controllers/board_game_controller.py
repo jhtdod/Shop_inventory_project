@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.board_game import BoardGame
+from models.manufacturer import Manufacturer
 import repositories.board_game_repository as board_game_repository
 import repositories.manufacturer_repository as manufacturer_repository
 
@@ -19,6 +20,11 @@ def show_inventory():
 def show_details(id):
     board_game = board_game_repository.select(id)
     return render_template('board_games/show.html', board_game=board_game)
+
+@board_game_blueprint.route('/inventory/add')
+def show_add_form():
+    manufacturers = manufacturer_repository.select_all()
+    return render_template('board_games/new.html', manufacturers=manufacturers)
 
 @board_game_blueprint.route('/inventory/add', methods=['POST'])
 def add_game():
