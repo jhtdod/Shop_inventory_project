@@ -37,3 +37,21 @@ def add_game():
     new_game = BoardGame(name, description, quantity, buying_cost, selling_price, manufacturer)
     board_game_repository.save(new_game)
     return redirect('/inventory')
+
+@board_game_blueprint.route('/inventory/edit/<int:id>')
+def show_edit(id):
+    board_game = board_game_repository.select(id)
+    manufacturers = manufacturer_repository.select_all()
+    return render_template('/board_games/edit.html', board_game=board_game, manufacturers=manufacturers)
+
+@board_game_blueprint.route('/inventory/edit/<int:id>', methods=['POST'])
+def edit_game(id):
+    name = request.form["name"]
+    description = request.form['description']
+    quantity = request.form['quantity']
+    buying_cost = request.form['cost']
+    selling_price = request.form['selling_price']
+    manufacturer = manufacturer_repository.select(request.form['manufacturer'])
+    updated_game = BoardGame(name, description, quantity, buying_cost, selling_price, manufacturer, id)
+    board_game_repository.save(updated_game)
+    return redirect('/inventory')
