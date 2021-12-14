@@ -1,0 +1,30 @@
+<div id= "inventory-front-page">
+    {% for game in board_games %}
+        <div class = "board_games">
+            <ul>
+                <div class="same-line">
+                    <li><a href="/inventory/{{game.id}}">{{game.name}}</a>
+                    <div class = "low-stock">
+                        {% if (game.quantity <=3) and (game.quantity >0) %}
+                            <p>Low Stock</p>
+                        {% endif %}
+                    </div>
+                    <div class = "out-of-stock">
+                        {% if game.quantity == 0 %}
+                            <p>Out of Stock</p>
+                        {% endif %}
+                    </div>
+                    </li>
+                </div>
+                <li>Description: {{game.description}}</li>
+                <li>Quantity: {{game.quantity}}</li>
+                <li>Cost: {{game.buying_cost}}</li>
+                <li>Selling Price: {{game.selling_price}}</li>
+                <li>Manufacturer: {{game.manufacturer.name}}</li>
+            </ul>
+        </div>
+    {% endfor %}
+    <div id = "add_button">
+        <a href="/inventory/add">Add Board Game</a>
+    </div>
+</div>

@@ -15,7 +15,11 @@ def show_manufacturer():
 @manufacturer_blueprint.route('/manufacturers/<int:id>')
 def show_details(id):
     manufacturer = manufacturer_repository.select(id)
-    return render_template('manufacturers/show.html', manufacturer=manufacturer)
+    board_games = board_game_repository.select_all()
+    manufacturer_name = []
+    for name in board_games:
+        manufacturer_name.append(name.manufacturer.name)
+    return render_template('manufacturers/show.html', manufacturer=manufacturer, board_games=board_games)
 
 @manufacturer_blueprint.route('/manufacturers/add')
 def show_add_form():

@@ -7,9 +7,10 @@ import repositories.manufacturer_repository as manufacturer_repository
 
 board_game_blueprint = Blueprint("board_game", __name__)
 
-# @board_game_blueprint.route('/')
-# def reroute():
-#     return redirect('/inventory')
+@board_game_blueprint.route('/')
+def split_view():
+    board_games = board_game_repository.select_all()
+    return render_template('index.html', board_games=board_games)
 
 @board_game_blueprint.route('/inventory')
 def show_inventory():

@@ -1,29 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<div class = "board_games">
-    <ul>
-        <div class="same-line">
-            <li>{{board_game.name}}: </li>   
-             <div class = "low-stock">
-                {% if (board_game.quantity <=3) and (board_game.quantity >0)%}
-                    Low Stock
-                {% endif %}
+<div class="page-flex">
+    <div id="inventory">
+    {% include 'inventory.html' %}
+    </div>
+    <div class = "board_games">
+        <ul>
+            <div class="same-line">
+                <li>{{board_game.name}}: </li>   
+                <div class = "low-stock">
+                    {% if (board_game.quantity <=3) and (board_game.quantity >0)%}
+                        Low Stock
+                    {% endif %}
+                </div>
+                <div class = "out-of-stock">
+                    {% if board_game.quantity == 0 %}
+                        Out of Stock
+                    {% endif %}
+                </div> 
             </div>
-             <div class = "out-of-stock">
-                {% if board_game.quantity == 0 %}
-                    Out of Stock
-                {% endif %}
-            </div> 
-        </div>
-        <li>Description: {{board_game.description}}</li>
-        <li>Quantity: {{board_game.quantity}}</li>
-        <li>Cost: {{board_game.buying_cost}}</li>
-        <li>Selling Price: {{board_game.selling_price}}</li>
-        <li>Manufacturer: {{board_game.manufacturer.name}}</li>
-    </ul>
-    <a href="/inventory/edit/{{board_game.id}}">Edit</a> <br>
-    <a href="/inventory/delete/{{board_game.id}}">Delete</a>
+            <li>Description: {{board_game.description}}</li>
+            <li>Quantity: {{board_game.quantity}}</li>
+            <li>Cost: {{board_game.buying_cost}}</li>
+            <li>Selling Price: {{board_game.selling_price}}</li>
+            <li>Manufacturer: {{board_game.manufacturer.name}}</li>
+        </ul>
+        <a href="/inventory/edit/{{board_game.id}}">Edit</a> <br>
+        <a href="/inventory/delete/{{board_game.id}}">Delete</a>
+    </div>
 </div>
-    
 {% endblock  %}

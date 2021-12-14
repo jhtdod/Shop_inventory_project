@@ -12,15 +12,26 @@
         <h1>Board Game Inventory</h1>
         <div id = "header-links">
             <ul>
-                <li><a href="/inventory">Inventory</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/inventory">Full View</a></li>
                 <li><a href="/manufacturers">Manufacturers</a></li>
             </ul>
         </div>
     </header>
-    <div class = "container">
-        {% block content %}
+    <div id="page-flex">
+        <div class = "index">
+            {% block index %}
+                
+            {% endblock  %}
+            {% block inventory %}
+                
+            {% endblock  %}
+        </div>
+        <div class = "container">
+            {% block content %}
 
-        {% endblock  %}
-    </div>
+            {% endblock  %}
+        </div>
+    </div>  
 </body>
 </html>

@@ -9,3 +9,8 @@
 .same-line {
     display: flex;
 }
+
+#page-flex {
+    display: flex;
+}
+
