@@ -3,25 +3,27 @@
 
 <div class = "board_games">
     <ul>
-        <li>{{board_game.name}}
-        <div class = "low-stock">
-            {% if (board_game.quantity <=3) and (board_game.quantity >0)%}
-                <p>Low Stock</p>
-            {% endif %}
+        <div class="same-line">
+            <li>{{board_game.name}}: </li>   
+             <div class = "low-stock">
+                {% if (board_game.quantity <=3) and (board_game.quantity >0)%}
+                    Low Stock
+                {% endif %}
+            </div>
+             <div class = "out-of-stock">
+                {% if board_game.quantity == 0 %}
+                    Out of Stock
+                {% endif %}
+            </div> 
         </div>
-        <div class = "out-of-stock">
-            {% if board_game.quantity == 0 %}
-                <p>Out of Stock</p>
-            {% endif %}
-        </div>
-        </li> 
         <li>Description: {{board_game.description}}</li>
         <li>Quantity: {{board_game.quantity}}</li>
         <li>Cost: {{board_game.buying_cost}}</li>
         <li>Selling Price: {{board_game.selling_price}}</li>
         <li>Manufacturer: {{board_game.manufacturer.name}}</li>
     </ul>
-    <a href="/inventory/edit/{{board_game.id}}">Edit</a>
+    <a href="/inventory/edit/{{board_game.id}}">Edit</a> <br>
+    <a href="/inventory/delete/{{board_game.id}}">Delete</a>
 </div>
     
 {% endblock  %}

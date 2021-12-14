@@ -55,3 +55,8 @@ def edit_game(id):
     updated_game = BoardGame(name, description, quantity, buying_cost, selling_price, manufacturer, id)
     board_game_repository.update(updated_game)
     return redirect('/inventory')
+
+@board_game_blueprint.route('/inventory/delete/<int:id>')
+def delete_game(id):
+    board_game_repository.delete(id)
+    return redirect('/inventory')

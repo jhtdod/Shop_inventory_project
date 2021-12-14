@@ -5,3 +5,7 @@
 .low-stock {
     color: #ff8800;
 }
+
+.same-line {
+    display: flex;
+}

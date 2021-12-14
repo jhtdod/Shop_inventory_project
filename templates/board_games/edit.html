@@ -3,20 +3,22 @@
 {% block content %}
 <div class = "board_games">
     <form action="/inventory/edit/{{board_game.id}}" method="post">
-        <li>
-            <label for="name">Name: </label>
-            <input type="text" id="name" name="name" value="{{board_game.name}}">
-            <div class = "low-stock">
-                {% if (board_game.quantity <=3) and (board_game.quantity >0)%}
-                    <p>Low Stock</p>
-                {% endif %}
-            </div>
-            <div class = "out-of-stock">
-                {% if board_game.quantity == 0 %}
-                    <p>Out of Stock</p>
-                {% endif %}
-            </div>
-        </li>
+        <div class="same-line">
+            <li>
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" value="{{board_game.name}}">
+                <div class = "low-stock">
+                    {% if (board_game.quantity <=3) and (board_game.quantity >0)%}
+                        <p>Low Stock</p>
+                    {% endif %}
+                </div>
+                <div class = "out-of-stock">
+                    {% if board_game.quantity == 0 %}
+                        <p>Out of Stock</p>
+                    {% endif %}
+                </div>
+            </li>
+        </div>
         <li>
             <label for="description">Description: </label>
             <input type="text" id="description" name="description" value="{{board_game.description}}">
