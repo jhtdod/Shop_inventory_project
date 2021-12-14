@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class = "manufacturer">
+    <ul>
+        <li>{{manufacturer.name}}: </li>   
+        <li>Contact details: {{manufacturer.description}}</li>
+    </ul>
+    <a href="/manufacturer/edit/{{manufacturer.id}}">Edit</a> <br>
+    <a href="/manufacturer/delete/{{manufacturer.id}}">Delete</a>
+</div>
+    
+{% endblock  %}
