@@ -1,4 +1,6 @@
-
+body {
+    margin:0 30vh;
+}
 
 .out-of-stock {
     color: red;
@@ -6,7 +8,7 @@
 
 .low-stock {
     color: #ff8800;
-}
+
 
 .same-line {
     display: flex;
@@ -16,5 +18,7 @@
     display: flex;
 }
 
-
+#board_games {
+    margin-left: 30vh;
+}
 
