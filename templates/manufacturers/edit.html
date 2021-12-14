@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "manufacturers">
+    <form action="/manufacturer/edit/{{manufacturer.id}}" method="post">
+        <li>
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" value="{{manufacturer.name}}">
+        </li>
+        <li>
+            <label for="contact_details">Contact Details: </label>
+            <input type="text" id="contact_details" name="contact_details" value="{{manufacturer.contact_details}}">
+        </li>
+        <li>
+            <input type="submit" value="Update">
+        </li>
+    </form>
+</div>
+
+
+{% endblock  %}
