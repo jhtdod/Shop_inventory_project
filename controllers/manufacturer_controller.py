@@ -36,17 +36,13 @@ def show_edit(id):
     board_games = board_game_repository.select_all()
     return render_template('/manufacturer/edit.html', board_games=board_games, manufacturer=manufacturer)
 
-@board_game_blueprint.route('/inventory/edit/<int:id>', methods=['POST'])
+@manufacturer_blueprint.route('/manufacturer/edit/<int:id>', methods=['POST'])
 def edit_game(id):
     name = request.form["name"]
-    description = request.form['description']
-    quantity = request.form['quantity']
-    buying_cost = request.form['cost']
-    selling_price = request.form['selling_price']
-    manufacturer = manufacturer_repository.select(request.form['manufacturer'])
-    updated_game = BoardGame(name, description, quantity, buying_cost, selling_price, manufacturer, id)
-    board_game_repository.update(updated_game)
-    return redirect('/inventory')
+    contact_details = request.form['contact_details']
+    updated_manufacturer = Manufacturer(name, contact_details, id)
+    manufacturer_repository.update(updated_manufacturer)
+    return redirect('/manufacturer')
 
 @board_game_blueprint.route('/inventory/delete/<int:id>')
 def delete_game(id):
