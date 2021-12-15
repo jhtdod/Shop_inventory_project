@@ -2,14 +2,22 @@
 {% block content %}
 
 <div id= "inventory-front-page">
-{% for manufacturer in manufacturers %}
-    <div class = "board_games">
-        <ul>
-            <li><a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}} </a></li>
-            <li>Contact details: {{manufacturer.contact_details}}</li>
-        </ul>
-    </div>
-{% endfor %}
+    {% for manufacturer in manufacturers %}
+
+        {% if manufacturer.id == id %}
+            
+            {% include 'manufacturers/show.html' %}
+
+        {% else %}
+            <div class = "board_games">
+                <ul>
+                    <li><a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}} </a></li>
+                    <li>Contact details: {{manufacturer.contact_details}}</li>
+                </ul>
+            </div>
+        {% endif %}
+    {% endfor %}
 </div>
+
 
 {% endblock %}

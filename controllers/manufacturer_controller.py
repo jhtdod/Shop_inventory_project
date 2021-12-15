@@ -19,7 +19,7 @@ def show_details(id):
     manufacturer_name = []
     for name in board_games:
         manufacturer_name.append(name.manufacturer.name)
-    return render_template('manufacturers/show.html', manufacturer=manufacturer, board_games=board_games)
+    return render_template('manufacturers/index.html', manufacturer=manufacturer, board_games=board_games, id=id)
 
 @manufacturer_blueprint.route('/manufacturers/add')
 def show_add_form():

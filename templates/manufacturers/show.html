@@ -1,17 +1,14 @@
-{% extends 'base.html' %}
-{% block content %}
-
-<div class = "manufacturer">
-    <ul>
-        <li>{{manufacturer.name}}</li>   
-        <li>Contact details: {{manufacturer.contact_details}}</li>
-        <li>Board Games: </li>
-        {% for name in manufacturer_name %}
-            <li>{{name}}</li>
-        {% endfor %}
-    </ul>
-    <a href="/manufacturers/edit/{{manufacturer.id}}">Edit</a> <br>
-    <a href="/manufacturers/delete/{{manufacturer.id}}">Delete</a>
+<div class="page-flex-2">
+    <div class = "board_games_2">
+        <ul>
+            <li>{{manufacturer.name}}</li>   
+            <li>Contact details: {{manufacturer.contact_details}}</li>
+            <li>Board Games: </li>
+            {% for name in manufacturer_name %}
+                <li>{{name}}</li>
+            {% endfor %}
+        </ul>
+        <a href="/manufacturers/edit/{{manufacturer.id}}">Edit</a> <br>
+        <a href="/manufacturers/delete/{{manufacturer.id}}">Delete</a>
+    </div>
 </div>
-    
-{% endblock  %}
