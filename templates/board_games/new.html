@@ -1,33 +1,44 @@
 {% extends 'base.html' %}
 {% block content %}
     
-<h1>Add New Board Game</h1>
-
-<form action="/inventory/add" method="post">
-    <label for="name">Name</label>
-    <input type="text" id = "name" name = "name"> <br>
-
-    <label for="description">Description</label>
-    <input type="text" id = "description" name = "description"><br>
-
-    <label for="quantity">Quantity</label>
-    <input type="number" id = "quantity" name = "quantity"><br>
-
-    <label for="buying_cost">Buying Cost</label>
-    <input type="number" id = "buying_cost" name = "buying_cost"><br>
-
-    <label for="selling_price">Selling Price</label>
-    <input type="text" name="selling_price" id="selling_price"><br>
-
-    <label for="manufacturer">Manufacturer:</label>
-    <select id="manufacturer" name="manufacturer" >
-    {% for manufacturer in manufacturers %}
-        <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
-    {% endfor %}
-    </select><br>   
-    <div>
-        <input type="submit">
+<div id= "inventory-front-page">
+    <h1>Board Games</h1>
+    <div class = "board_games_2"> 
+        <form action="/inventory/add" method="post">
+            <li>
+                <label for="name">Name</label>
+                <input type="text" id = "name" name = "name"> <br>
+            </li>
+            <li>
+                <label for="description">Description</label>
+                <input type="text" id = "description" name = "description"><br>
+            </li>
+            <li>
+                <label for="quantity">Quantity</label>
+                <input type="number" id = "quantity" name = "quantity"><br>
+            </li>
+            <li>
+                <label for="buying_cost">Buying Cost</label>
+                <input type="number" id = "buying_cost" name = "buying_cost"><br>
+            </li>
+            <li>
+                <label for="selling_price">Selling Price</label>
+                <input type="text" name="selling_price" id="selling_price"><br>
+            </li>
+            <li>
+                <label for="manufacturer">Manufacturer:</label>
+                <select id="manufacturer" name="manufacturer" >
+                {% for manufacturer in manufacturers %}
+                    <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
+                {% endfor %}
+                </select><br>   
+            </li>
+            <li>
+                <div>
+                    <input type="submit">
+                </div>
+        </li>
+        </form>
     </div>
-</form>
-
+</div>
 {% endblock  %}
