@@ -52,30 +52,32 @@ body > header > h1 {
     display: flex;
 }
 
+.same-line > li {
+    list-style-type: none;
+}
+
 .page-flex {
-    margin:0 0 50vh 8vh;
-    padding: 0 100vh 0 0;
+    margin:0 10vh 0 8vh;
+    padding: 0 50vh 0 0;
     display: flex;
     border: solid black 1px;
+    height: 50vh;
+    overflow: hidden;
 }
 
 .page-flex-2 {
     display: flex;
 }
 
-.board_games {
-    padding: 3vh 2vh 0vh 0;
-}
-
 .board_games > ul > li {
     list-style-type: none;
-    margin: 0;
-    padding:0 0 0 0;
+    padding: 10px 0;
 }
 
 .board_games > ul {
     font-family: Helvetica;
     border-bottom: solid black 1px;
-    margin: 0;
-    padding: 0 0 20px 10px;
+    width: 300px;
+    height: auto;
+    padding: 0 0 0 10px;
 }
