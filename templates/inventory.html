@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <div id= "inventory-front-page">
+   
     {% for game in board_games %}
         <div class = "board_games">
             <ul>
@@ -20,7 +21,5 @@
             </ul>
         </div>
     {% endfor %}
-    <div id = "add_button">
-        <a href="/inventory/add">Add Board Game</a>
-    </div>
+    
 </div>

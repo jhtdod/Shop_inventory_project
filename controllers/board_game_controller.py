@@ -10,12 +10,12 @@ board_game_blueprint = Blueprint("board_game", __name__)
 @board_game_blueprint.route('/')
 def split_view():
     board_games = board_game_repository.select_all()
-    return render_template('index.html', board_games=board_games)
+    return render_template('base.html', board_games=board_games)
 
 @board_game_blueprint.route('/inventory')
 def show_inventory():
     board_games = board_game_repository.select_all()
-    return render_template('board_games/index.html', board_games=board_games)
+    return render_template('index.html', board_games=board_games)
 
 @board_game_blueprint.route('/inventory/<int:id>')
 def show_details(id):

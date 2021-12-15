@@ -7,6 +7,7 @@ body {
 .main-body {
     display: flex;
     align-self: flex-start;
+    margin:0;
 }
 
 /* Header base.html */
@@ -18,17 +19,20 @@ body > header > h1 {
 
 #header-links {
     font-family: Helvetica;
-    background-color: rgb(124, 124, 124);
-    padding:0 11vh 100vh 0vh;
+    background-color: rgb(153, 153, 153);
+    padding:0 0 100vh 0vh;
+    margin:0;
+    width: 30vh;
 }
 
-#header-links > ul {
+/* #header-links > ul {
     padding:none;
-}
+    margin:none;
+} */
 
 #header-links > ul > li {
     list-style-type:none;
-    padding:12px 0;
+    padding:2vh 0;
 }
 
 #header-links > ul > li > a {
@@ -59,8 +63,8 @@ body > header > h1 {
 }
 
 .page-flex {
-    margin:0 10vh 0 8vh;
-    padding: 0 50vh 0 0;
+    margin:0 10vh 0 10vh;
+    /* padding: 0 50vh 0 50px; */
     display: flex;
     /* border: solid black 1px; */
     /* height: 50vh;
@@ -73,15 +77,15 @@ body > header > h1 {
 
 .board_games > ul > li {
     list-style-type: none;
-    padding: 10px 0;
+    padding: 1vh 0;
 }
 
 .board_games > ul {
     font-family: Helvetica;
     width: 100vh;
+    margin:0 10vh 0 10vh;
     height: auto;
-    padding: 10px;
-    margin: 0;
+    padding: 2vh;
     border-bottom: solid black 1px;;
 }
 
@@ -90,3 +94,4 @@ body > header > h1 {
     font-weight: bolder;
     /* text-decoration: none; */
 }
+
