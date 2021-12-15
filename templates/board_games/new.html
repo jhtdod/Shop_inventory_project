@@ -28,6 +28,7 @@
             <li>
                 <label for="manufacturer">Manufacturer:</label>
                 <select id="manufacturer" name="manufacturer" >
+                    <option disabled selected value>Select an option</option>
                 {% for manufacturer in manufacturers %}
                     <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
                 {% endfor %}
