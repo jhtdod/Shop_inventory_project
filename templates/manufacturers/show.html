@@ -1,7 +1,9 @@
 <div class="page-flex-2">
     <div class = "board_games_2">
         <ul>
-            <li>{{manufacturer.name}}</li>   
+            <div class="same-line">
+                <li>{{manufacturer.name}}</li>   
+            </div>
             <li>Contact details: {{manufacturer.contact_details}}</li>
             <li>Board Games: </li>
             {% for name in manufacturer_name %}

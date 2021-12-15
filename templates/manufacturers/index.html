@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
+
+
 <div id= "inventory-front-page">
+    <h1>Manufacturers</h1>
     {% for manufacturer in all_manufacturers %}
 
         {% if manufacturer.id == id %}

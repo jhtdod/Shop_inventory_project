@@ -2,31 +2,42 @@
 {% block content %}
 
 <div id= "inventory-front-page">
-   
+    <h1>Board Games</h1>
     {% for game in board_games %}
     {% if game.id == id %}
-    
-        {% include 'board_games/show.html' %}
 
+        {% if edit %}
+
+            {% include 'board_games/edit.html' %}
+
+        {% else %}
+
+        {% include 'board_games/show.html' %}
+            
+        {% endif %}
+    
     {% else %}
-    <div class = "board_games">
-        <ul>
-            <div class="same-line">
-                    <a href="/inventory/{{game.id}}">{{game.name}}</a>
-                        <div class = "low-stock">
-                            {% if (game.quantity <=3) and (game.quantity >0)%}
-                                Low Stock
-                            {% endif %}
+        <div class = "board_games">
+            <ul>
+                    <li>
+                        <div class="same-line">
+                                <a href="/inventory/{{game.id}}">{{game.name}}</a>
+                                    <div class = "low-stock">
+                                        {% if (game.quantity <=3) and (game.quantity >0)%}
+                                            Low Stock
+                                        {% endif %}
+                                    </div>
+                                    <div class = "out-of-stock">
+                                        {% if game.quantity == 0 %}
+                                            Out of Stock
+                                        {% endif %}
+                                        </div>
                         </div>
-                        <div class = "out-of-stock">
-                            {% if game.quantity == 0 %}
-                                Out of Stock
-                            {% endif %}
-                            </div>
+                    </li>
+                    <li>{{game.manufacturer.name}}</li>
+                </ul>
             </div>
-            <li>{{game.manufacturer.name}}</li>
-        </ul>
-    </div>
+        
     {% endif %}
         
     {% endfor %}
@@ -34,4 +45,3 @@
 </div>
 
 {% endblock %}
-

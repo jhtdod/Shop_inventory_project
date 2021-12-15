@@ -10,12 +10,12 @@ board_game_blueprint = Blueprint("board_game", __name__)
 @board_game_blueprint.route('/')
 def split_view():
     board_games = board_game_repository.select_all()
-    return render_template('base.html', board_games=board_games)
+    return render_template('home.html', board_games=board_games)
 
 @board_game_blueprint.route('/inventory')
 def show_inventory():
     board_games = board_game_repository.select_all()
-    return render_template('index.html', board_games=board_games)
+    return render_template('board_games/index.html', board_games=board_games)
 
 @board_game_blueprint.route('/inventory/<int:id>')
 def show_details(id):
@@ -44,7 +44,9 @@ def add_game():
 def show_edit(id):
     board_game = board_game_repository.select(id)
     manufacturers = manufacturer_repository.select_all()
-    return render_template('/board_games/edit.html', board_game=board_game, manufacturers=manufacturers)
+    board_games = board_game_repository.select_all()
+    edit = True
+    return render_template('/board_games/index.html', board_game=board_game, manufacturers=manufacturers, board_games=board_games, edit=edit, id=id)
 
 @board_game_blueprint.route('/inventory/edit/<int:id>', methods=['POST'])
 def edit_game(id):

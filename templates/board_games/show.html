@@ -14,7 +14,7 @@
                     {% endif %}
                 </div> 
             </div>
-            <li>Manufacturer: {{board_game.manufacturer.name}}</li>
+            <li>Manufacturer: <a href="/manufacturers/{{board_game.manufacturer.id}}">{{board_game.manufacturer.name}}</a></li>
             <li>Description: {{board_game.description}}</li>
             <li>Quantity: {{board_game.quantity}}</li>
             <li>Cost: {{board_game.buying_cost}}</li>
