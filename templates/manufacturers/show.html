@@ -6,8 +6,12 @@
             </div>
             <li>Contact details: {{manufacturer.contact_details}}</li>
             <li>Board Games: </li>
-            {% for name in manufacturer_name %}
-                <li>{{name}}</li>
+            {% for game in board_games %}
+                {% if game.manufacturer.name == manufacturer.name %}
+                    <li>
+                        <div id="indent"><a href="http://127.0.0.1:5000/inventory/{{game.id}}">{{game.name}}</a></div>
+                    </li>
+                {% endif %}
             {% endfor %}
             <li>
                 <div class="edit-delete">

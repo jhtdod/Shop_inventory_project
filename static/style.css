@@ -99,7 +99,6 @@ body > header > h1 {
 .same-line > a {
     color: black;
     font-weight: bolder;
-    /* text-decoration: none; */
 }
 
 .same-line > li {
@@ -129,6 +128,12 @@ body > header > h1 {
 .board_games_2 > ul > li {
     list-style-type: none;
     padding: 1vh 0;
+}
+
+#indent {
+    padding: 0vh 5vh;
+    font-size: 11pt;
+    font-style: italic;
 }
 
 #inventory-front-page > h1 {
