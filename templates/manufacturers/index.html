@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div id= "inventory-front-page">
 {% for manufacturer in manufacturers %}
-    <div class = "manufacturer">
+    <div class = "board_games">
         <ul>
-            <li>Name: <a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}} </a></li>
+            <li><a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}} </a></li>
             <li>Contact details: {{manufacturer.contact_details}}</li>
         </ul>
     </div>
 {% endfor %}
+</div>
 
 {% endblock %}

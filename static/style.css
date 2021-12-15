@@ -20,7 +20,7 @@ body > header > h1 {
 #header-links {
     font-family: Helvetica;
     background-color: rgb(153, 153, 153);
-    padding:0 0 100vh 0vh;
+    padding:0 0 100vh 0;
     margin:0;
     width: 30vh;
 }
@@ -87,6 +87,11 @@ body > header > h1 {
     height: auto;
     padding: 2vh;
     border-bottom: solid black 1px;;
+}
+
+.board_games > ul > li > a {
+    color: black;
+    font-weight: bolder;
 }
 
 .same-line > a {
