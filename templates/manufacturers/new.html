@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-    
-<h1>Add New Manufacturer</h1>
 
-<form action="/manufacturers/add" method="post">
-    <label for="name">Name: </label>
-    <input type="text" id = "name" name = "name"> <br>
-
-    <label for="contact_details">Contact details: </label>
-    <input type="text" id = "contact_details" name = "contact_details"><br>
-    <div>
-        <input type="submit"> <br>
-    </div>
-</form>
-
+<div id= "inventory-front-page">
+    <h1>Add New Manufacturer</h1>
+    <div class="board_games_2">
+        <form action="/manufacturers/add" method="post">
+            <li>
+                <label for="name">Name: </label>
+                <input type="text" id = "name" name = "name"> <br>
+            </li>
+            <li>
+                <label for="contact_details">Contact details: </label>
+                <input type="text" id = "contact_details" name = "contact_details"><br>
+            </li>
+            <li>
+                    <input type="submit"> <br>
+            </li>    
+        </form>
+    </div>  
+</div>
 {% endblock  %}
