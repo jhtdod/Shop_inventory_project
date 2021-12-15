@@ -21,7 +21,7 @@ def show_inventory():
 def show_details(id):
     board_game = board_game_repository.select(id)
     board_games = board_game_repository.select_all()
-    return render_template('board_games/show.html', board_game=board_game, board_games=board_games)
+    return render_template('board_games/index.html', board_game=board_game, board_games=board_games, id=id)
 
 @board_game_blueprint.route('/inventory/add')
 def show_add_form():

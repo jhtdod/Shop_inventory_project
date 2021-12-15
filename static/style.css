@@ -95,3 +95,31 @@ body > header > h1 {
     /* text-decoration: none; */
 }
 
+.same-line > li {
+    font-weight: bolder;
+}
+
+.edit-delete {
+    display: flex;
+    font: helvetica;
+}
+
+.edit-delete > a{
+    color: darkblue;
+    margin: 0 10px 0 0;
+}
+
+.board_games_2 > ul {
+    font-family: Helvetica;
+    width: 100vh;
+    margin:0 10vh 0 10vh;
+    height: auto;
+    padding: 2vh;
+    border: solid rgb(34, 66, 168) 1px;
+    background-color: rgba(125, 155, 255, 0.144);
+}
+
+.board_games_2 > ul > li {
+    list-style-type: none;
+    padding: 1vh 0;
+}

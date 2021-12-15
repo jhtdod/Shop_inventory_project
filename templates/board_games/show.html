@@ -1,14 +1,8 @@
-{% extends 'base.html' %}
-{% block content %}
-
 <div class="page-flex-2">
-    <div id="inventory">
-        {% include 'inventory.html' %}
-    </div> <br>
-    <div class = "board_games">
+    <div class = "board_games_2">
         <ul>
             <div class="same-line">
-                <li>{{board_game.name}}: </li>   
+                <li>{{board_game.name}} </li>   
                 <div class = "low-stock">
                     {% if (board_game.quantity <=3) and (board_game.quantity >0)%}
                         Low Stock
@@ -20,14 +14,18 @@
                     {% endif %}
                 </div> 
             </div>
+            <li>Manufacturer: {{board_game.manufacturer.name}}</li>
             <li>Description: {{board_game.description}}</li>
             <li>Quantity: {{board_game.quantity}}</li>
             <li>Cost: {{board_game.buying_cost}}</li>
             <li>Selling Price: {{board_game.selling_price}}</li>
-            <li>Manufacturer: {{board_game.manufacturer.name}}</li>
+            <li>
+                <div class="edit-delete">
+                    <a href="/inventory/edit/{{board_game.id}}">Edit</a> <br>
+                    <a href="/inventory/delete/{{board_game.id}}">Delete</a>
+                </div>
+            </li>
         </ul>
-        <a href="/inventory/edit/{{board_game.id}}">Edit</a> <br>
-        <a href="/inventory/delete/{{board_game.id}}">Delete</a>
+        
     </div>
 </div>
-{% endblock  %}
