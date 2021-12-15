@@ -1,11 +1,10 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <div id= "inventory-front-page">
     {% for game in board_games %}
         <div class = "board_games">
             <ul>
                 <div class="same-line">
-                    <li><a href="/inventory/{{game.id}}">{{game.name}}</a>
-                        
-                             
+                        <a href="/inventory/{{game.id}}">{{game.name}}</a>
                             <div class = "low-stock">
                                 {% if (game.quantity <=3) and (game.quantity >0)%}
                                     Low Stock
@@ -15,13 +14,8 @@
                                 {% if game.quantity == 0 %}
                                     Out of Stock
                                 {% endif %}
-
-                    </li>
+                                </div>
                 </div>
-                <li>Description: {{game.description}}</li>
-                <li>Quantity: {{game.quantity}}</li>
-                <li>Cost: {{game.buying_cost}}</li>
-                <li>Selling Price: {{game.selling_price}}</li>
                 <li>Manufacturer: {{game.manufacturer.name}}</li>
             </ul>
         </div>

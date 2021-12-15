@@ -9,7 +9,9 @@
 </head>
 <body>
     <header>
-        <h1>Board Game Inventory</h1>
+        <h1>Inventory</h1>
+    </header>
+    <div class ="main-body">
         <div id = "header-links">
             <ul>
                 <li><a href="/">Home</a></li>
@@ -17,13 +19,11 @@
                 <li><a href="/manufacturers">Manufacturers</a></li>
             </ul>
         </div>
-    </header>
-    <div id="page-flex">
-        <div class = "container">
+    <div class="page-flex">
             {% block content %}
 
             {% endblock  %}
-        </div>
     </div>  
+    </div>
 </body>
 </html>

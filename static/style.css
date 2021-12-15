@@ -1,24 +1,81 @@
+/* Background base.html */
+
 body {
-    margin:0 30vh;
+    margin: 0;
 }
+
+.main-body {
+    display: flex;
+    align-self: flex-start;
+}
+
+/* Header base.html */
+
+body > header > h1 {
+    font-family: Helvetica;
+    padding:0 5vh;
+}
+
+#header-links {
+    font-family: Helvetica;
+    background-color: rgb(124, 124, 124);
+    padding:0 11vh 100vh 0vh;
+}
+
+#header-links > ul {
+    padding:none;
+}
+
+#header-links > ul > li {
+    list-style-type:none;
+    padding:12px 0;
+}
+
+#header-links > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+/* inventory.html & board_games/show.html */
 
 .out-of-stock {
     color: red;
+    margin:0 3px;
 }
 
 .low-stock {
-    color: #ff8800;
-
+    color: rgb(255, 136, 0);
+    margin:0 3px;
+}
 
 .same-line {
     display: flex;
 }
 
 .page-flex {
+    margin:0 0 50vh 8vh;
+    padding: 0 100vh 0 0;
+    display: flex;
+    border: solid black 1px;
+}
+
+.page-flex-2 {
     display: flex;
 }
 
-#board_games {
-    margin-left: 30vh;
+.board_games {
+    padding: 3vh 2vh 0vh 0;
 }
 
+.board_games > ul > li {
+    list-style-type: none;
+    margin: 0;
+    padding:0 0 0 0;
+}
+
+.board_games > ul {
+    font-family: Helvetica;
+    border-bottom: solid black 1px;
+    margin: 0;
+    padding: 0 0 20px 10px;
+}
