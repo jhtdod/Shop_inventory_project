@@ -40,12 +40,14 @@ body > header > h1 {
 
 .out-of-stock {
     color: red;
-    margin:0 3px;
+    margin:0 10px;
+    font-weight: bolder;
 }
 
 .low-stock {
     color: rgb(255, 136, 0);
-    margin:0 3px;
+    margin:0 10px;
+    font-weight: bolder;
 }
 
 .same-line {
@@ -60,9 +62,9 @@ body > header > h1 {
     margin:0 10vh 0 8vh;
     padding: 0 50vh 0 0;
     display: flex;
-    border: solid black 1px;
-    height: 50vh;
-    overflow: hidden;
+    /* border: solid black 1px; */
+    /* height: 50vh;
+    overflow: hidden; */
 }
 
 .page-flex-2 {
@@ -76,8 +78,15 @@ body > header > h1 {
 
 .board_games > ul {
     font-family: Helvetica;
-    border-bottom: solid black 1px;
-    width: 300px;
+    width: 100vh;
     height: auto;
-    padding: 0 0 0 10px;
+    padding: 10px;
+    margin: 0;
+    border-bottom: solid black 1px;;
+}
+
+.same-line > a {
+    color: black;
+    font-weight: bolder;
+    /* text-decoration: none; */
 }
