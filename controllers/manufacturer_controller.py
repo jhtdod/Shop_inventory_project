@@ -8,18 +8,19 @@ manufacturer_blueprint = Blueprint("manufacturer", __name__)
 
 @manufacturer_blueprint.route('/manufacturers')
 def show_manufacturer():
-    manufacturers = manufacturer_repository.select_all()
-    return render_template('manufacturers/index.html', manufacturers=manufacturers)
+    all_manufacturers = manufacturer_repository.select_all()
+    return render_template('manufacturers/index.html', all_manufacturers=all_manufacturers)
 
 
 @manufacturer_blueprint.route('/manufacturers/<int:id>')
 def show_details(id):
     manufacturer = manufacturer_repository.select(id)
+    all_manufacturers = manufacturer_repository.select_all()
     board_games = board_game_repository.select_all()
-    manufacturer_name = []
-    for name in board_games:
-        manufacturer_name.append(name.manufacturer.name)
-    return render_template('manufacturers/index.html', manufacturer=manufacturer, board_games=board_games, id=id)
+    # manufacturer_name = []
+    # for name in board_games:
+    #     manufacturer_name.append(name.manufacturer.name)
+    return render_template('manufacturers/index.html', manufacturer=manufacturer, all_manufacturers=all_manufacturers, board_games=board_games, id=id)
 
 @manufacturer_blueprint.route('/manufacturers/add')
 def show_add_form():

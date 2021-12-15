@@ -2,7 +2,7 @@
 {% block content %}
 
 <div id= "inventory-front-page">
-    {% for manufacturer in manufacturers %}
+    {% for manufacturer in all_manufacturers %}
 
         {% if manufacturer.id == id %}
             
@@ -18,6 +18,5 @@
         {% endif %}
     {% endfor %}
 </div>
-
 
 {% endblock %}

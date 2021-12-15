@@ -7,8 +7,12 @@
             {% for name in manufacturer_name %}
                 <li>{{name}}</li>
             {% endfor %}
+            <li>
+                <div class="edit-delete">
+                    <a href="/manufacturers/edit/{{manufacturer.id}}">Edit</a> <br>
+                    <a href="/manufacturers/delete/{{manufacturer.id}}">Delete</a>
+                </div>
+            </li>
         </ul>
-        <a href="/manufacturers/edit/{{manufacturer.id}}">Edit</a> <br>
-        <a href="/manufacturers/delete/{{manufacturer.id}}">Delete</a>
     </div>
 </div>
