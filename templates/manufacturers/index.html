@@ -9,7 +9,16 @@
 
         {% if manufacturer.id == id %}
             
-            {% include 'manufacturers/show.html' %}
+            {% if edit %}
+
+                {% include 'manufacturers/edit.html' %}
+
+            {% else %}
+
+                {% include 'manufacturers/show.html' %}
+                
+            {% endif %}
+            
 
         {% else %}
             <div class = "board_games">

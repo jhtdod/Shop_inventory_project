@@ -38,8 +38,10 @@ def add_manufacturer():
 @manufacturer_blueprint.route('/manufacturers/edit/<int:id>')
 def show_edit(id):
     manufacturer = manufacturer_repository.select(id)
+    all_manufacturers = manufacturer_repository.select_all()
     board_games = board_game_repository.select_all()
-    return render_template('/manufacturers/edit.html', board_games=board_games, manufacturer=manufacturer)
+    edit = True
+    return render_template('/manufacturers/index.html', board_games=board_games, manufacturer=manufacturer, all_manufacturers=all_manufacturers, edit=edit, id=id)
 
 @manufacturer_blueprint.route('/manufacturers/edit/<int:id>', methods=['POST'])
 def edit_manufacturer(id):
